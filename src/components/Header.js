@@ -21,6 +21,11 @@ function Header() {
             <Link to="/add">Add a student</Link>
           </NavLink>
         </NavItem>
+        <NavItem>
+          <NavLink>
+            <Link to="/view">View Students List</Link>
+          </NavLink>
+        </NavItem>
       </Nav>
     </header>
   );

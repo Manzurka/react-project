@@ -9,6 +9,8 @@ import Regions from "./views/Regions";
 import Header from "./components/Header";
 import Students from "./views/Students";
 import ViewStudents from "./views/ViewStudents";
+import { DataProvider } from "./providers/DataProvider";
+
 class App extends React.Component {
   render() {
     return (
@@ -67,7 +69,9 @@ class App extends React.Component {
 }
 
 export default () => (
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>
+  <DataProvider>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </DataProvider>
 );
