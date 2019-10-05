@@ -1,0 +1,121 @@
+[
+  {
+    "id": 1,
+    "region": "AZ",
+    "totalScore": 85,
+    "monday": 75,
+    "tuesday": 90,
+    "wednesday": 95,
+    "thursday": 70,
+    "friday": 80,
+    "teachers": [
+      {
+        "id": 1,
+        "name": "Dan",
+        "totalScore": 80,
+        "monday": 75,
+        "tuesday": 90,
+        "wednesday": 95,
+        "thursday": 70,
+        "friday": 75,
+        "students": []
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "region": "CA",
+    "totalScore": 80,
+    "monday": 75,
+    "tuesday": 90,
+    "wednesday": 95,
+    "thursday": 70,
+    "friday": 75,
+    "teachers": [
+      {
+        "id": 1,
+        "name": "Ken",
+        "totalScore": 80,
+        "monday": 75,
+        "tuesday": 90,
+        "wednesday": 95,
+        "thursday": 70,
+        "friday": 75,
+        "students": [
+          {
+            "id": 1,
+            "name": "Daniel",
+            "totalScore": 85,
+            "monday": 75,
+            "tuesday": 90,
+            "wednesday": 95,
+            "thursday": 70,
+            "friday": 80
+          },
+          {
+            "id": 2,
+            "name": "Kathy",
+            "totalScore": 85,
+            "monday": 75,
+            "tuesday": 90,
+            "wednesday": 95,
+            "thursday": 70,
+            "friday": 80
+          },
+          {
+            "id": 3,
+            "name": "Sarah",
+            "totalScore": 85,
+            "monday": 75,
+            "tuesday": 90,
+            "wednesday": 95,
+            "thursday": 70,
+            "friday": 80
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Maria",
+        "totalScore": 80,
+        "monday": 75,
+        "tuesday": 90,
+        "wednesday": 95,
+        "thursday": 70,
+        "friday": 75,
+        "students": [
+          {
+            "id": 1,
+            "name": "Paul",
+            "totalScore": 85,
+            "monday": 75,
+            "tuesday": 90,
+            "wednesday": 95,
+            "thursday": 70,
+            "friday": 80
+          },
+          {
+            "id": 2,
+            "name": "Mary",
+            "totalScore": 85,
+            "monday": 75,
+            "tuesday": 90,
+            "wednesday": 95,
+            "thursday": 70,
+            "friday": 80
+          },
+          {
+            "id": 3,
+            "name": "Stefan",
+            "totalScore": 85,
+            "monday": 75,
+            "tuesday": 90,
+            "wednesday": 95,
+            "thursday": 70,
+            "friday": 80
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,26 +1,73 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Homepage from "./views/Homepage";
+import About from "./views/About";
+import Add from "./views/Add";
+import Teachers from "./views/Teachers";
+import Regions from "./views/Regions";
+import Header from "./components/Header";
+import Students from "./views/Students";
+import ViewStudents from "./views/ViewStudents";
+class App extends React.Component {
+  render() {
+    return (
+      <div className="App">
+        <Header />
+        <main>
+          <Switch>
+            <Route
+              path="/table/:region/:teacher"
+              render={routeProps => {
+                return (
+                  <>
+                    <Regions match={routeProps.match} />
+                  </>
+                );
+              }}
+            />
+            <Route
+              path="/table/:region"
+              render={routeProps => {
+                return <Regions match={routeProps.match} />;
+              }}
+            />
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+            <Route path="/table" component={Regions} />
+            <Route
+              path="/add"
+              render={() => {
+                return <Add />;
+              }}
+            />
+            <Route
+              path="/news"
+              render={() => {
+                return <About />;
+              }}
+            />
+            <Route
+              path="/view"
+              render={() => {
+                return <ViewStudents />;
+              }}
+            />
+
+            <Route
+              path="/"
+              render={() => {
+                return <Homepage />;
+              }}
+            />
+          </Switch>
+        </main>
+      </div>
+    );
+  }
 }
 
-export default App;
+export default () => (
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
+);
