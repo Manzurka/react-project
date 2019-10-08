@@ -3,41 +3,28 @@ import { Link } from "react-router-dom";
 import data from "../data.json";
 import Teachers from "./Teachers";
 import Students from "./Students";
+
 class Regions extends React.Component {
   state = {
-    regions: data
+    regions: data,
+    states: [
+      {
+        ID: 1,
+        Site: "AZ",
+        TotalScore: 85,
+        EOC: 75,
+        ClassroomAudit: 90,
+        Compliance: 95,
+        KnowledgeAccuracy: 70,
+        CaseHandling: 80
+      }
+    ]
   };
-  // {
-  //   teachers: false,
-  //   // component: null,
-  //   states: [
-  //     {
-  //       id: 1,
-  //       region: "AZ",
-  //       totalScore: 85,
-  //       monday: 75,
-  //       tuesday: 90,
-  //       wednesday: 95,
-  //       thursday: 70,
-  //       friday: 80
-  //     },
-  //     {
-  //       id: 2,
-  //       region: "CA",
-  //       totalScore: 80,
-  //       monday: 75,
-  //       tuesday: 90,
-  //       wednesday: 95,
-  //       thursday: 70,
-  //       friday: 75
-  //     }
-  //   ]
-  // };
 
   render() {
     return (
       <div>
-        <h1 id="title">Weekly Report</h1>
+        <h1 id="title">Monthly Report</h1>
         <table
           class="table table-dark table-hover table-striped  table-bordered"
           id="regions"
@@ -90,9 +77,9 @@ class Regions extends React.Component {
   }
 
   renderTableHeader() {
-    let header = Object.keys(this.state.regions[0]);
+    let header = Object.keys(this.state.states[0]);
     return header.map((key, index) => {
-      if (key !== "teachers") return <th key={index}>{key.toUpperCase()}</th>;
+      if (key !== "teachers") return <th key={index}>{key}</th>;
       return null;
     });
   }

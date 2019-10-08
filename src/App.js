@@ -4,12 +4,10 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Homepage from "./views/Homepage";
 import About from "./views/About";
 import Add from "./views/Add";
-import Teachers from "./views/Teachers";
 import Regions from "./views/Regions";
 import Header from "./components/Header";
-import Students from "./views/Students";
 import ViewStudents from "./views/ViewStudents";
-import { DataProvider } from "./providers/DataProvider";
+import { DataProvider } from "./providers/DataContext";
 
 class App extends React.Component {
   render() {

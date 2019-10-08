@@ -18,12 +18,12 @@ function Header() {
         </NavItem>
         <NavItem>
           <NavLink>
-            <Link to="/add">Add a student</Link>
+            <Link to="/add">Add a Trainer</Link>
           </NavLink>
         </NavItem>
         <NavItem>
           <NavLink>
-            <Link to="/view">View Students List</Link>
+            <Link to="/view">View Trainers List</Link>
           </NavLink>
         </NavItem>
       </Nav>

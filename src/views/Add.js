@@ -2,7 +2,8 @@ import React from "react";
 import { Button, Form, FormGroup, Input, Label } from "reactstrap";
 import Student from "../components/Student";
 import ViewStudents from "../views/ViewStudents";
-import { DataConsumer } from "../providers/DataProvider";
+import { DataConsumer } from "../providers/DataContext";
+
 class Add extends React.Component {
   state = {
     name: "",
@@ -31,16 +32,17 @@ class Add extends React.Component {
       thursday,
       friday
     } = this.state;
-    // add to the list
-    // this.props.addStudent({
-    //   name,
-    //   totalScore,
-    //   monday,
-    //   tuesday,
-    //   wednesday,
-    //   thursday,
-    //   friday
-    // });
+    // add to the global list
+    this.props.addStudent({
+      name,
+      totalScore,
+      monday,
+      tuesday,
+      wednesday,
+      thursday,
+      friday
+    });
+
     // push new customer object into the customers list in state:
     this.setState(
       {
@@ -73,6 +75,8 @@ class Add extends React.Component {
   };
 
   render() {
+    console.log(this.props.students);
+    console.log(this.props.addStudent);
     const {
       name,
       totalScore,
@@ -93,7 +97,7 @@ class Add extends React.Component {
               type="text"
               name="name"
               id="name"
-              placeholder="student name"
+              placeholder="Trainer name"
               value={name}
               onChange={handleChange}
             ></Input>
@@ -108,7 +112,7 @@ class Add extends React.Component {
               onChange={handleChange}
             ></Input>
           </FormGroup>
-          <Label>Monday</Label>
+          <Label>EOC</Label>
           <FormGroup>
             <Input
               type="text"
@@ -118,7 +122,7 @@ class Add extends React.Component {
               onChange={handleChange}
             ></Input>
           </FormGroup>
-          <Label>Tuesday</Label>
+          <Label>ClassroomAudit</Label>
           <FormGroup>
             <Input
               type="text"
@@ -128,7 +132,7 @@ class Add extends React.Component {
               onChange={handleChange}
             ></Input>
           </FormGroup>
-          <Label>Wednesday</Label>
+          <Label>Compliance</Label>
           <FormGroup>
             <Input
               type="text"
@@ -138,7 +142,7 @@ class Add extends React.Component {
               onChange={handleChange}
             ></Input>
           </FormGroup>
-          <Label>Thursday</Label>
+          <Label>KnowledgeAccuracy</Label>
           <FormGroup>
             <Input
               type="text"
@@ -148,7 +152,7 @@ class Add extends React.Component {
               onChange={handleChange}
             ></Input>
           </FormGroup>
-          <Label>Friday</Label>
+          <Label>CaseHandling</Label>
           <FormGroup>
             <Input
               type="text"
@@ -162,7 +166,12 @@ class Add extends React.Component {
           <Input type="submit">Submit</Input>
         </Form>
         {this.state.students.map(student => {
-          return <Student key={student.name} {...student} />;
+          return (
+            <>
+              <p>The current information was added to the trainers list</p>
+              <Student key={student.name} {...student} />
+            </>
+          );
         })}
       </div>
     );

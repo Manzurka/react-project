@@ -6,14 +6,14 @@ class Teachers extends React.Component {
   state = {
     headers: [
       {
-        id: 1,
-        name: "Ken",
-        totalScore: 85,
-        monday: 75,
-        tuesday: 90,
-        wednesday: 95,
-        thursday: 70,
-        friday: 80
+        ID: 1,
+        Manager: "Ken",
+        TotalScore: 85,
+        EOC: 75,
+        ClassroomAudit: 90,
+        Compliance: 95,
+        KnowledgeAccuracy: 70,
+        CaseHandling: 80
       }
     ],
     teachers: []
@@ -84,7 +84,7 @@ class Teachers extends React.Component {
   renderTableHeader() {
     let header = Object.keys(this.state.headers[0]);
     return header.map((key, index) => {
-      return <th key={index}>{key.toUpperCase()}</th>;
+      return <th key={index}>{key}</th>;
     });
   }
 }

@@ -1,6 +1,6 @@
 import React from "react";
-import { DataConsumer } from "../providers/DataProvider";
-
+import { DataConsumer } from "../providers/DataContext";
+import { Card } from "reactstrap";
 function Student(props) {
   const {
     name,
@@ -13,15 +13,15 @@ function Student(props) {
   } = props;
 
   return (
-    <div style={{ border: "2px solid red" }}>
+    <Card style={{ border: "1px solid" }}>
       <h3>{name}</h3>
       <p>Total Score: {totalScore}</p>
-      <p>Monday: {monday}</p>
-      <p>Tuesday: {tuesday}</p>
-      <p>Wednesday: {wednesday}</p>
-      <p>Thursday: {thursday}</p>
-      <p>Friday: {friday}</p>
-    </div>
+      <p>EOC: {monday}</p>
+      <p>ClassroomAudit: {tuesday}</p>
+      <p>Compliance: {wednesday}</p>
+      <p>KnowledgeAccuracy: {thursday}</p>
+      <p>CaseHandling: {friday}</p>
+    </Card>
   );
 }
 
